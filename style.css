@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: white;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.cell:hover {
+  background: #ffd369;
+  transform: scale(1.1);
+}
+
+#status {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #ff6b6b;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff3b3b;
+  transform: scale(1.05);
+}
+
+/* 🎈 Balloons */
+#balloons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 50px;
+  border-radius: 50%;
+  animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
